@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 
 public class MyConnection {
     private static final String username = "root";
-    private static final String password = "my_password";   // edit this line to YOUR password
+    private static final String password = "Huyho@ng432002";   // edit this line to YOUR password
     private static final String dataConnection = "jdbc:mysql://localhost:3306/student_management";
     private static Connection connection = null;
     

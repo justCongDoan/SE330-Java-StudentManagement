@@ -5,9 +5,16 @@
 package student;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,7 +26,7 @@ public class Home extends javax.swing.JFrame {
     Student student = new Student();
     
     int xx, xy;
-    
+    private String imagePath;
     private DefaultTableModel model;
     
     public Home() {
@@ -64,8 +71,9 @@ public class Home extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jLabelImage = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabelImage = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -243,6 +251,7 @@ public class Home extends javax.swing.JFrame {
 
         jTextFieldStudentName.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
+        jDateChooserStudentDateOfBirth.setDateFormatString("yyyy-MM-dd");
         jDateChooserStudentDateOfBirth.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jComboBoxStudentGender.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
@@ -251,6 +260,11 @@ public class Home extends javax.swing.JFrame {
         jTextFieldStudentEmail.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
         jTextFieldStudentPhoneNumber.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jTextFieldStudentPhoneNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldStudentPhoneNumberKeyTyped(evt);
+            }
+        });
 
         jTextFieldStudentFather.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
 
@@ -296,23 +310,30 @@ public class Home extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(102, 255, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton1.setText("Browse");
-
-        jLabelImage.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabelImage.setText("<Image>");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
+
+        jLabelImage.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 365, Short.MAX_VALUE)
+            .addComponent(jLabelImage, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabelImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel31.setText(" Image");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -322,7 +343,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelImage))
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -333,8 +354,8 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabelImage)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                        .addComponent(jLabel31)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(113, 113, 113))
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -420,7 +441,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldStudentAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -517,6 +538,11 @@ public class Home extends javax.swing.JFrame {
         jButtonStudentAdd.setBackground(new java.awt.Color(102, 255, 255));
         jButtonStudentAdd.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButtonStudentAdd.setText("Add");
+        jButtonStudentAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonStudentAddActionPerformed(evt);
+            }
+        });
 
         jButtonStudentUpdate.setBackground(new java.awt.Color(102, 255, 255));
         jButtonStudentUpdate.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -578,7 +604,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jButtonStudentPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonStudentClear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonStudentLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -1672,7 +1698,7 @@ public class Home extends javax.swing.JFrame {
     }
     
     private void clearStudent() {
-        jTextFieldStudentID.setText(null);
+        jTextFieldStudentID.setText(String.valueOf(student.getMaxRow()));
         jTextFieldStudentName.setText(null);
         jTextFieldStudentEmail.setText(null);
         jTextFieldStudentPhoneNumber.setText(null);
@@ -1684,7 +1710,61 @@ public class Home extends javax.swing.JFrame {
         jComboBoxStudentGender.setSelectedIndex(0);
         jLabelImage.setIcon(null);
         jTableStudent.clearSelection();
+        imagePath = null;
     }
+    
+    public boolean isEmptyStudent(){
+        if(jTextFieldStudentName.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Student name is missing");
+            return false;
+        }
+        if(jDateChooserStudentDateOfBirth.getDate()==null){
+            JOptionPane.showMessageDialog(this, "Student date of birth is missing");
+            return false;
+        }
+        if(jDateChooserStudentDateOfBirth.getDate().compareTo(new Date())>0){
+            JOptionPane.showMessageDialog(this, "No students from future are allowed");
+            return false;
+        }
+        if(jTextFieldStudentEmail.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Student's email address is missing");
+            return false;
+        }
+        if(!jTextFieldStudentEmail.getText().matches("^.+@.+\\..+$")){
+            JOptionPane.showMessageDialog(this, "Invalid email");
+            return false;
+        }
+           if(jTextFieldStudentPhoneNumber.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Student phone number is missing");
+            return false;
+        }
+        if(jTextFieldStudentPhoneNumber.getText().length()>=15){
+            JOptionPane.showMessageDialog(this, "Phone number is too long");
+            return false;
+        }
+        if(jTextFieldStudentFather.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Father's name of student is missing");
+            return false;
+        }
+         if(jTextFieldStudentMother.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Mother's name of student is missing");
+            return false;
+        }
+         if(jTextFieldStudentAddress1.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Address line 1 is missing");
+            return false;
+        }
+          if(jTextFieldStudentAddress2.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Address line 2 is missing");
+            return false;
+        }
+          if(imagePath == null){
+            JOptionPane.showMessageDialog(this, "Please add your image");
+            return false;
+        }
+          return true;
+    }
+       
     
     private void jTextFieldStudentIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStudentIDActionPerformed
         // TODO add your handling code here:
@@ -1781,6 +1861,60 @@ public class Home extends javax.swing.JFrame {
         clearStudent();
     }//GEN-LAST:event_jButtonStudentClearActionPerformed
 
+    private void jButtonStudentAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStudentAddActionPerformed
+        // TODO add your handling code here:
+        if(isEmptyStudent()){
+            int id = student.getMaxRow();
+            String name = jTextFieldStudentName.getText();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String date = dateFormat.format(jDateChooserStudentDateOfBirth.getDate());
+            String gender = jComboBoxStudentGender.getSelectedItem().toString();
+            String email = jTextFieldStudentEmail.getText();
+            String phone = jTextFieldStudentPhoneNumber.getText();
+            String father = jTextFieldStudentFather.getText();
+            String mother = jTextFieldStudentMother.getText();
+            String address1 = jTextFieldStudentAddress1.getText();
+            String address2 = jTextFieldStudentAddress2.getText();
+            student.insert(id, name, date, gender, email, phone, father, mother, address1, address2, imagePath);
+            clearStudent();
+        }
+    }//GEN-LAST:event_jButtonStudentAddActionPerformed
+
+    private void jTextFieldStudentPhoneNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldStudentPhoneNumberKeyTyped
+        // TODO add your handling code here:
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextFieldStudentPhoneNumberKeyTyped
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser file =new JFileChooser();
+        file.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.image","jpg","gif","png");
+       file.addChoosableFileFilter(filter);
+       int output = file.showSaveDialog(file);
+       if(output == JFileChooser.APPROVE_OPTION){
+           File selectFile = file.getSelectedFile();
+           String path = selectFile.getAbsolutePath();
+           jLabelImage.setIcon(imageAdjust(path,null));
+           imagePath =path;
+       }else{
+           JOptionPane.showMessageDialog(this, "No image selected");
+       }
+    }//GEN-LAST:event_jButton1ActionPerformed
+private ImageIcon imageAdjust(String path,byte [] pic){
+    ImageIcon myImage = null;
+    if(path!= null){
+        myImage = new ImageIcon(path);
+    }else{
+        myImage = new ImageIcon(pic);
+    }
+    Image img = myImage.getImage();
+    Image newImage = img.getScaledInstance(jLabelImage.getWidth(), jLabelImage.getHeight(), Image.SCALE_SMOOTH);
+    ImageIcon icon = new ImageIcon(newImage);
+    return icon;
+}
     /**
      * @param args the command line arguments
      */
@@ -1877,6 +2011,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel47;
