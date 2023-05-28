@@ -6,7 +6,10 @@ package student;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.print.PrinterException;
 import java.io.File;
+import java.text.MessageFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
@@ -14,6 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,10 +28,11 @@ import javax.swing.table.DefaultTableModel;
 public class Home extends javax.swing.JFrame {
 
     Student student = new Student();
-    
+    Course course = new Course();
     int xx, xy;
     private String imagePath;
     private DefaultTableModel model;
+    private int rowIndex;
     
     public Home() {
         initComponents();
@@ -465,6 +470,11 @@ public class Home extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton3.setText("Refresh");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -513,6 +523,11 @@ public class Home extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableStudent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableStudentMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableStudent);
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -547,14 +562,29 @@ public class Home extends javax.swing.JFrame {
         jButtonStudentUpdate.setBackground(new java.awt.Color(102, 255, 255));
         jButtonStudentUpdate.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButtonStudentUpdate.setText("Update");
+        jButtonStudentUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonStudentUpdateActionPerformed(evt);
+            }
+        });
 
         jButtonStudentDelete.setBackground(new java.awt.Color(102, 255, 255));
         jButtonStudentDelete.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButtonStudentDelete.setText("Delete");
+        jButtonStudentDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonStudentDeleteActionPerformed(evt);
+            }
+        });
 
         jButtonStudentPrint.setBackground(new java.awt.Color(102, 255, 255));
         jButtonStudentPrint.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButtonStudentPrint.setText("Print");
+        jButtonStudentPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonStudentPrintActionPerformed(evt);
+            }
+        });
 
         jButtonStudentClear.setBackground(new java.awt.Color(102, 255, 255));
         jButtonStudentClear.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -660,6 +690,8 @@ public class Home extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(153, 255, 204));
         jPanel12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
+        jTextField9.setEditable(false);
+        jTextField9.setBackground(new java.awt.Color(204, 204, 204));
         jTextField9.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -677,10 +709,20 @@ public class Home extends javax.swing.JFrame {
         jLabel47.setText("Student's ID");
 
         jTextField10.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        jTextField10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField10KeyTyped(evt);
+            }
+        });
 
         jButton10.setBackground(new java.awt.Color(102, 255, 255));
         jButton10.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jButton10.setText("Search");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -708,6 +750,8 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jTextField11.setEditable(false);
+        jTextField11.setBackground(new java.awt.Color(204, 204, 204));
         jTextField11.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -917,6 +961,11 @@ public class Home extends javax.swing.JFrame {
         jButton13.setBackground(new java.awt.Color(102, 255, 255));
         jButton13.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton13.setText("Save");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton16.setBackground(new java.awt.Color(102, 255, 255));
         jButton16.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -925,6 +974,11 @@ public class Home extends javax.swing.JFrame {
         jButton17.setBackground(new java.awt.Color(102, 255, 255));
         jButton17.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton17.setText("Clear");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         jButtonCourseLogout.setBackground(new java.awt.Color(102, 255, 255));
         jButtonCourseLogout.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -1686,15 +1740,27 @@ public class Home extends javax.swing.JFrame {
 
     public void init() {
         tableViewStudent();
+        tableViewCourse();
         jTextFieldStudentID.setText(String.valueOf(student.getMaxRow()));
+        jTextField9.setText(String.valueOf(course.getMaxRow()));
     }
     
     private void tableViewStudent() {
+        student.getStudentValue(jTableStudent,"");
         model = (DefaultTableModel) jTableStudent.getModel();
         jTableStudent.setRowHeight(30);
         jTableStudent.setShowGrid(true);
         jTableStudent.setGridColor(Color.black);
         jTableStudent.setBackground(Color.white);
+    }
+    
+    private void tableViewCourse() {
+        course.getCoursetValue(jTable2, "");
+        model = (DefaultTableModel) jTable2.getModel();
+        jTable2.setRowHeight(30);
+        jTable2.setShowGrid(true);
+        jTable2.setGridColor(Color.black);
+        jTable2.setBackground(Color.white);
     }
     
     private void clearStudent() {
@@ -1711,6 +1777,19 @@ public class Home extends javax.swing.JFrame {
         jLabelImage.setIcon(null);
         jTableStudent.clearSelection();
         imagePath = null;
+    }
+    public void clearCourse(){
+        jTextField9.setText(String.valueOf(course.getMaxRow()));
+        jTextField10.setText(null);
+        jTextField11.setText(null);
+        jComboBox5.removeAllItems();
+        jComboBox6.setSelectedIndex(0);
+        jComboBox7.setSelectedIndex(0);
+        jComboBox8.setSelectedIndex(0);
+        jComboBox9.setSelectedIndex(0);
+        jComboBox10.setSelectedIndex(0);
+        jTable2.clearSelection();
+        
     }
     
     public boolean isEmptyStudent(){
@@ -1772,6 +1851,13 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        if (searchField.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter key words");
+        } else {
+            jTableStudent.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student Name", "Date of birth", "Gender", "Email", "Phone number", "Father Name", "Mother Name", "Address Line 1", "Address Line 2", "Image Path"}));
+            student.getStudentValue(jTableStudent, searchField.getText());
+        }
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
@@ -1864,19 +1950,31 @@ public class Home extends javax.swing.JFrame {
     private void jButtonStudentAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStudentAddActionPerformed
         // TODO add your handling code here:
         if(isEmptyStudent()){
-            int id = student.getMaxRow();
-            String name = jTextFieldStudentName.getText();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            String date = dateFormat.format(jDateChooserStudentDateOfBirth.getDate());
-            String gender = jComboBoxStudentGender.getSelectedItem().toString();
-            String email = jTextFieldStudentEmail.getText();
-            String phone = jTextFieldStudentPhoneNumber.getText();
-            String father = jTextFieldStudentFather.getText();
-            String mother = jTextFieldStudentMother.getText();
-            String address1 = jTextFieldStudentAddress1.getText();
-            String address2 = jTextFieldStudentAddress2.getText();
-            student.insert(id, name, date, gender, email, phone, father, mother, address1, address2, imagePath);
-            clearStudent();
+            if(!student.isEmailExist(jTextFieldStudentEmail.getText())){
+                if(!student.isPhoneExist(jTextFieldStudentPhoneNumber.getText())){
+                    int id = student.getMaxRow();
+                    String name = jTextFieldStudentName.getText();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    String date = dateFormat.format(jDateChooserStudentDateOfBirth.getDate());
+                    String gender = jComboBoxStudentGender.getSelectedItem().toString();
+                    String email = jTextFieldStudentEmail.getText();
+                    String phone = jTextFieldStudentPhoneNumber.getText();
+                    String father = jTextFieldStudentFather.getText();
+                    String mother = jTextFieldStudentMother.getText();
+                    String address1 = jTextFieldStudentAddress1.getText();
+                    String address2 = jTextFieldStudentAddress2.getText();
+                    student.insert(id, name, date, gender, email, phone, father, mother, address1, address2, imagePath);
+                    jTableStudent.setModel(new DefaultTableModel(null, new Object[]{"Student Id","Student Name","Date of birth","Gender","Email","Phone number","Father Name","Mother Name","Address Line 1","Address Line 2","Image Path"}));
+                    student.getStudentValue(jTableStudent, "");
+                    clearStudent();
+                } else {
+                    JOptionPane.showMessageDialog(this, "This phone number is already exits");
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(this, "This email is already exits");
+            }
+
         }
     }//GEN-LAST:event_jButtonStudentAddActionPerformed
 
@@ -1903,6 +2001,193 @@ public class Home extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(this, "No image selected");
        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonStudentUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStudentUpdateActionPerformed
+        // TODO add your handling code here:
+         if (isEmptyStudent()) {
+             int id = Integer.parseInt(jTextFieldStudentID.getText());
+             if(student.isIdExist(id)){
+                 if(!check()){
+                     String name = jTextFieldStudentName.getText();
+                     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                     String date = dateFormat.format(jDateChooserStudentDateOfBirth.getDate());
+                     String gender = jComboBoxStudentGender.getSelectedItem().toString();
+                     String email = jTextFieldStudentEmail.getText();
+                     String phone = jTextFieldStudentPhoneNumber.getText();
+                     String father = jTextFieldStudentFather.getText();
+                     String mother = jTextFieldStudentMother.getText();
+                     String address1 = jTextFieldStudentAddress1.getText();
+                     String address2 = jTextFieldStudentAddress2.getText();
+                     student.update(id, name, date, gender, email, phone, father, mother, address1, address2, imagePath);
+                     jTableStudent.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student Name", "Date of birth", "Gender", "Email", "Phone number", "Father Name", "Mother Name", "Address Line 1", "Address Line 2", "Image Path"}));
+                     student.getStudentValue(jTableStudent, "");
+                     clearStudent();
+                 }
+             }else{
+                 JOptionPane.showMessageDialog(this, "Student id does not exist");
+             }
+        }
+    }//GEN-LAST:event_jButtonStudentUpdateActionPerformed
+        
+    public boolean check(){
+        String newEmail = jTextFieldStudentEmail.getText();
+        String newPhone = jTextFieldStudentPhoneNumber.getText();
+        String oldEmail = model.getValueAt(rowIndex, 4).toString();
+        String oldPhone = model.getValueAt(rowIndex, 5).toString();
+        if(newEmail.equals(oldEmail)&& newPhone.equals(oldPhone)){
+            return false;
+        }else{
+            if(!newEmail.equals(oldEmail)){
+                boolean x = student.isEmailExist(newEmail);
+                if(x){
+                    JOptionPane.showMessageDialog(this, "This email already exist");
+                }
+                return x;
+            }
+             if(!newPhone.equals(oldPhone)){
+                boolean x = student.isPhoneExist(newPhone);
+                if(x){
+                    JOptionPane.showMessageDialog(this, "This phone number already exist");
+                }
+                return x;
+            }
+        }
+        return false;
+    }
+    private void jTableStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableStudentMouseClicked
+            model = (DefaultTableModel) jTableStudent.getModel();
+            rowIndex = jTableStudent.getSelectedRow();
+            jTextFieldStudentID.setText(model.getValueAt(rowIndex, 0).toString());
+            jTextFieldStudentName.setText(model.getValueAt(rowIndex, 1).toString());
+        try {
+            // TODO add your handling code he
+            Date date = new SimpleDateFormat("yyyy-MM-dd").parse(model.getValueAt(rowIndex, 2).toString());
+            jDateChooserStudentDateOfBirth.setDate(date);
+        } catch (ParseException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String gender = model.getValueAt(rowIndex, 3).toString();
+        if(gender.equals("Male")){
+            jComboBoxStudentGender.setSelectedIndex(0);
+        }else{
+            jComboBoxStudentGender.setSelectedIndex(1);
+        }
+        jTextFieldStudentEmail.setText(model.getValueAt(rowIndex, 4).toString());
+        jTextFieldStudentPhoneNumber.setText(model.getValueAt(rowIndex, 5).toString());
+        jTextFieldStudentFather.setText(model.getValueAt(rowIndex, 6).toString());
+        jTextFieldStudentMother.setText(model.getValueAt(rowIndex, 7).toString());
+        jTextFieldStudentAddress1.setText(model.getValueAt(rowIndex, 8).toString());
+        jTextFieldStudentAddress2.setText(model.getValueAt(rowIndex, 9).toString());
+        String path = model.getValueAt(rowIndex, 10).toString();
+        imagePath = path;
+        jLabelImage.setIcon(imageAdjust(path, null));
+    }//GEN-LAST:event_jTableStudentMouseClicked
+
+    private void jButtonStudentDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStudentDeleteActionPerformed
+        // TODO add your handling code here:
+        int id = Integer.parseInt(jTextFieldStudentID.getText());
+        if (student.isIdExist(id)) {
+            student.delete(id);
+            jTableStudent.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student Name", "Date of birth", "Gender", "Email", "Phone number", "Father Name", "Mother Name", "Address Line 1", "Address Line 2", "Image Path"}));
+            student.getStudentValue(jTableStudent, "");
+            clearStudent();
+        } else {
+            JOptionPane.showMessageDialog(this, "Student id does not exist");
+        }
+
+    }//GEN-LAST:event_jButtonStudentDeleteActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        jTableStudent.setModel(new DefaultTableModel(null, new Object[]{"Student Id", "Student Name", "Date of birth", "Gender", "Email", "Phone number", "Father Name", "Mother Name", "Address Line 1", "Address Line 2", "Image Path"}));
+        student.getStudentValue(jTableStudent, "");
+        searchField.setText(null);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButtonStudentPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStudentPrintActionPerformed
+        try {
+            // TODO add your handling code here:
+            MessageFormat header = new MessageFormat("Student Information");
+            MessageFormat footer = new MessageFormat("Page{0,number,integer}");
+            jTableStudent.print(JTable.PrintMode.FIT_WIDTH,header,footer);
+        } catch (PrinterException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonStudentPrintActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        clearCourse();
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        if (jTextField10.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a student id");
+        } else {
+            int id = Integer.parseInt(jTextField10.getText());
+            if (course.getId(id)) {
+                jComboBox5.removeAllItems();
+                int semester = course.countSemester(id);
+                if (semester >= 0) {
+                    for (int i = 1; i <= semester+1; i++) {
+                        jComboBox5.addItem(i + "");
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        if(jTextField11.getText().isEmpty() || jComboBox5.getItemCount()==0){
+            JOptionPane.showMessageDialog(this, "Student id or semester number is missing");
+        }else{
+            int id = course.getMaxRow();
+            int sid = Integer.parseInt(jTextField11.getText());
+            int semesterNo = Integer.parseInt(jComboBox5.getSelectedItem().toString());
+            String course1 = jComboBox6.getSelectedItem().toString();
+            String course2 = jComboBox7.getSelectedItem().toString();
+            String course3 = jComboBox8.getSelectedItem().toString();
+            String course4 = jComboBox9.getSelectedItem().toString();
+            String course5 = jComboBox10.getSelectedItem().toString();
+            if (course.isSemesterExist(sid, semesterNo)) {
+                JOptionPane.showMessageDialog(this, "This student has already taken semester " + semesterNo);
+            } else {
+                if (course.isCourseExist(sid, "course1", course1)) {
+                    JOptionPane.showMessageDialog(this, "This student has already taken" + course1 + " course ");
+                } else {
+                    if (course.isCourseExist(sid, "course2", course2)) {
+                        JOptionPane.showMessageDialog(this, "This student has already taken" + course2 + " course ");
+                    } else {
+                        if (course.isCourseExist(sid, "course3", course3)) {
+                            JOptionPane.showMessageDialog(this, "This student has already taken" + course3 + " course ");
+                        } else {
+                            if (course.isCourseExist(sid, "course4", course4)) {
+                                JOptionPane.showMessageDialog(this, "This student has already taken" + course4 + " course ");
+                            } else {
+                                if (course.isCourseExist(sid, "course5", course5)) {
+                                    JOptionPane.showMessageDialog(this, "This student has already taken" + course5 + " course ");
+                                }else{
+                                    course.insert(id, sid, semesterNo, course1, course2, course3, course4, course5);
+                                    jTable2.setModel(new DefaultTableModel(null, new Object[]{"Id", "Student Id", "Semester", "Course 1", "Course 2", "Course 3", "Course 4","Course 5"}));
+                                    course.getCoursetValue(jTable2, "");
+                                    clearCourse();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jTextField10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField10KeyTyped
+        // TODO add your handling code here:
+         if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField10KeyTyped
 private ImageIcon imageAdjust(String path,byte [] pic){
     ImageIcon myImage = null;
     if(path!= null){
@@ -2065,7 +2350,7 @@ private ImageIcon imageAdjust(String path,byte [] pic){
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTableStudent;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
+    public static javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
