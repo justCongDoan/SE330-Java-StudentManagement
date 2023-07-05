@@ -209,9 +209,9 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(1, 125, 133));
 
-        jPanelMain.setBackground(new java.awt.Color(102, 255, 255));
+        jPanelMain.setBackground(new java.awt.Color(252, 250, 237));
         jPanelMain.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanelMain.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
@@ -244,13 +244,14 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
+        jTabbedPane1.setBackground(new java.awt.Color(179, 223, 188));
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jTabbedPane1.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
 
-        jPanel3.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(1, 125, 133));
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel4.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel4.setBackground(new java.awt.Color(252, 250, 237));
         jPanel4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jTextFieldStudentID.setEditable(false);
@@ -317,10 +318,10 @@ public class Home extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel11.setText("Address Line 2");
 
-        jPanel6.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel6.setBackground(new java.awt.Color(252, 250, 237));
         jPanel6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jButton1.setBackground(new java.awt.Color(102, 255, 255));
+        jButton1.setBackground(new java.awt.Color(179, 223, 188));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton1.setText("Browse");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -368,7 +369,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(113, 113, 113))
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -459,15 +460,16 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel5.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel5.setBackground(new java.awt.Color(1, 127, 136));
         jPanel5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jPanel8.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel8.setBackground(new java.awt.Color(252, 250, 237));
         jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel12.setText("Search Student:");
 
+        jButton2.setBackground(new java.awt.Color(179, 223, 188));
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton2.setText("Search");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -476,6 +478,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(179, 223, 188));
         jButton3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton3.setText("Refresh");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -512,7 +515,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel9.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel9.setBackground(new java.awt.Color(252, 250, 237));
         jPanel9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jTableStudent.setModel(new javax.swing.table.DefaultTableModel(
@@ -551,14 +554,14 @@ public class Home extends javax.swing.JFrame {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
 
-        jPanel10.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel10.setBackground(new java.awt.Color(252, 250, 237));
         jPanel10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jButtonStudentAdd.setBackground(new java.awt.Color(102, 255, 255));
+        jButtonStudentAdd.setBackground(new java.awt.Color(179, 223, 188));
         jButtonStudentAdd.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButtonStudentAdd.setText("Add");
         jButtonStudentAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -567,7 +570,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButtonStudentUpdate.setBackground(new java.awt.Color(102, 255, 255));
+        jButtonStudentUpdate.setBackground(new java.awt.Color(179, 223, 188));
         jButtonStudentUpdate.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButtonStudentUpdate.setText("Update");
         jButtonStudentUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -576,7 +579,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButtonStudentDelete.setBackground(new java.awt.Color(102, 255, 255));
+        jButtonStudentDelete.setBackground(new java.awt.Color(216, 30, 91));
         jButtonStudentDelete.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButtonStudentDelete.setText("Delete");
         jButtonStudentDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -585,7 +588,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButtonStudentPrint.setBackground(new java.awt.Color(102, 255, 255));
+        jButtonStudentPrint.setBackground(new java.awt.Color(179, 223, 188));
         jButtonStudentPrint.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButtonStudentPrint.setText("Print");
         jButtonStudentPrint.addActionListener(new java.awt.event.ActionListener() {
@@ -594,7 +597,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButtonStudentClear.setBackground(new java.awt.Color(102, 255, 255));
+        jButtonStudentClear.setBackground(new java.awt.Color(179, 223, 188));
         jButtonStudentClear.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButtonStudentClear.setText("Clear");
         jButtonStudentClear.addActionListener(new java.awt.event.ActionListener() {
@@ -645,7 +648,7 @@ public class Home extends javax.swing.JFrame {
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonStudentAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonStudentUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -654,7 +657,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jButtonStudentClear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonStudentLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonStudentExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -675,9 +678,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -704,10 +707,10 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Student", jPanel3);
 
-        jPanel11.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel11.setBackground(new java.awt.Color(1, 125, 133));
         jPanel11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel12.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel12.setBackground(new java.awt.Color(252, 250, 237));
         jPanel12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jTextField9.setEditable(false);
@@ -722,7 +725,7 @@ public class Home extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel13.setText("ID");
 
-        jPanel13.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel13.setBackground(new java.awt.Color(252, 250, 237));
         jPanel13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jLabel47.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -735,7 +738,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setBackground(new java.awt.Color(102, 255, 255));
+        jButton10.setBackground(new java.awt.Color(179, 223, 188));
         jButton10.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jButton10.setText("Search");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -887,16 +890,16 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel15.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel15.setBackground(new java.awt.Color(1, 125, 133));
         jPanel15.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jPanel16.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel16.setBackground(new java.awt.Color(252, 250, 237));
         jPanel16.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel23.setText("Search Student:");
 
-        jButton11.setBackground(new java.awt.Color(102, 255, 255));
+        jButton11.setBackground(new java.awt.Color(179, 223, 188));
         jButton11.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton11.setText("Search");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -905,7 +908,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setBackground(new java.awt.Color(102, 255, 255));
+        jButton12.setBackground(new java.awt.Color(179, 223, 188));
         jButton12.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton12.setText("Refresh");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -976,14 +979,14 @@ public class Home extends javax.swing.JFrame {
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel18.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel18.setBackground(new java.awt.Color(252, 250, 237));
         jPanel18.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jButton13.setBackground(new java.awt.Color(102, 255, 255));
+        jButton13.setBackground(new java.awt.Color(179, 223, 188));
         jButton13.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton13.setText("Save");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -992,7 +995,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton16.setBackground(new java.awt.Color(102, 255, 255));
+        jButton16.setBackground(new java.awt.Color(179, 223, 188));
         jButton16.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton16.setText("Print");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
@@ -1001,7 +1004,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton17.setBackground(new java.awt.Color(102, 255, 255));
+        jButton17.setBackground(new java.awt.Color(179, 223, 188));
         jButton17.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton17.setText("Clear");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
@@ -1048,14 +1051,14 @@ public class Home extends javax.swing.JFrame {
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addContainerGap()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCourseLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonCourseExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
@@ -1076,9 +1079,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -1105,13 +1108,13 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Course", jPanel11);
 
-        jPanel19.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel19.setBackground(new java.awt.Color(1, 125, 133));
         jPanel19.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel20.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel20.setBackground(new java.awt.Color(252, 250, 237));
         jPanel20.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jPanel14.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel14.setBackground(new java.awt.Color(252, 250, 237));
         jPanel14.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jLabel48.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -1124,7 +1127,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton14.setBackground(new java.awt.Color(102, 255, 255));
+        jButton14.setBackground(new java.awt.Color(179, 223, 188));
         jButton14.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton14.setText("Search");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
@@ -1354,16 +1357,16 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel23.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel23.setBackground(new java.awt.Color(1, 125, 133));
         jPanel23.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jPanel24.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel24.setBackground(new java.awt.Color(252, 250, 237));
         jPanel24.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jLabel34.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel34.setText("Search Student:");
 
-        jButton20.setBackground(new java.awt.Color(102, 255, 255));
+        jButton20.setBackground(new java.awt.Color(179, 223, 188));
         jButton20.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton20.setText("Search");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -1372,7 +1375,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton21.setBackground(new java.awt.Color(102, 255, 255));
+        jButton21.setBackground(new java.awt.Color(179, 223, 188));
         jButton21.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton21.setText("Refresh");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -1409,7 +1412,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel25.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel25.setBackground(new java.awt.Color(252, 250, 237));
         jPanel25.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
@@ -1449,14 +1452,14 @@ public class Home extends javax.swing.JFrame {
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel26.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel26.setBackground(new java.awt.Color(252, 250, 237));
         jPanel26.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jButton22.setBackground(new java.awt.Color(102, 255, 255));
+        jButton22.setBackground(new java.awt.Color(179, 223, 188));
         jButton22.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton22.setText("Save");
         jButton22.addActionListener(new java.awt.event.ActionListener() {
@@ -1465,7 +1468,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton23.setBackground(new java.awt.Color(102, 255, 255));
+        jButton23.setBackground(new java.awt.Color(179, 223, 188));
         jButton23.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton23.setText("Update");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
@@ -1474,7 +1477,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton25.setBackground(new java.awt.Color(102, 255, 255));
+        jButton25.setBackground(new java.awt.Color(179, 223, 188));
         jButton25.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton25.setText("Print");
         jButton25.addActionListener(new java.awt.event.ActionListener() {
@@ -1483,7 +1486,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton26.setBackground(new java.awt.Color(102, 255, 255));
+        jButton26.setBackground(new java.awt.Color(179, 223, 188));
         jButton26.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton26.setText("Clear");
         jButton26.addActionListener(new java.awt.event.ActionListener() {
@@ -1532,7 +1535,7 @@ public class Home extends javax.swing.JFrame {
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel26Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addContainerGap()
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1540,7 +1543,7 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonScoreLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonScoreExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
@@ -1561,9 +1564,9 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -1590,13 +1593,13 @@ public class Home extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Score", jPanel19);
 
-        jPanel27.setBackground(new java.awt.Color(102, 255, 255));
+        jPanel27.setBackground(new java.awt.Color(1, 125, 133));
         jPanel27.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel28.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel28.setBackground(new java.awt.Color(252, 250, 237));
         jPanel28.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jPanel21.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel21.setBackground(new java.awt.Color(252, 250, 237));
         jPanel21.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jLabel50.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -1604,7 +1607,7 @@ public class Home extends javax.swing.JFrame {
 
         jTextField36.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
 
-        jButton15.setBackground(new java.awt.Color(102, 255, 255));
+        jButton15.setBackground(new java.awt.Color(179, 223, 188));
         jButton15.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jButton15.setText("Search");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -1658,9 +1661,9 @@ public class Home extends javax.swing.JFrame {
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap()
                 .addComponent(jLabel30)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -1684,7 +1687,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel31.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel31.setBackground(new java.awt.Color(1, 125, 133));
         jPanel31.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
         jPanel33.setBackground(new java.awt.Color(153, 255, 204));
@@ -1722,14 +1725,14 @@ public class Home extends javax.swing.JFrame {
             jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel33Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel34.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel34.setBackground(new java.awt.Color(252, 250, 237));
         jPanel34.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 255, 204), 4, true));
 
-        jButton34.setBackground(new java.awt.Color(102, 255, 255));
+        jButton34.setBackground(new java.awt.Color(179, 223, 188));
         jButton34.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton34.setText("Print");
         jButton34.addActionListener(new java.awt.event.ActionListener() {
@@ -1738,7 +1741,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton35.setBackground(new java.awt.Color(102, 255, 255));
+        jButton35.setBackground(new java.awt.Color(179, 223, 188));
         jButton35.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton35.setText("Clear");
         jButton35.addActionListener(new java.awt.event.ActionListener() {
@@ -1783,13 +1786,13 @@ public class Home extends javax.swing.JFrame {
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
-                .addGap(103, 103, 103)
+                .addContainerGap()
                 .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton34, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton35, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonMarkSheetLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonMarkSheetExit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
@@ -1807,9 +1810,9 @@ public class Home extends javax.swing.JFrame {
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -2113,10 +2116,10 @@ public class Home extends javax.swing.JFrame {
         try {
             double d = Double.parseDouble(s);
 
-            if (d >= 0.0 && d <= 4.0) {
+            if (d >= 0.0 && d <= 10.0) {
                 return true;
             } else {
-                JOptionPane.showMessageDialog(this, "Please enter a valid value, it must be between 0.0 to 4.0!");
+                JOptionPane.showMessageDialog(this, "Please enter a valid value, it must be between 0.0 to 10.0!");
                 return false;
             }
         } catch (NumberFormatException e) {
